@@ -199,3 +199,212 @@ a { color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .cta { transition: none; }
 }
+
+/* ---------- nav right cluster (with Research link) ---------- */
+.nav-right { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); }
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 6px 2px;
+  border-bottom: 0.5px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav-link:hover { color: var(--fg); }
+.nav-link.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+/* ---------- research page ---------- */
+.page {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 64px) clamp(20px, 5vw, 48px);
+}
+
+.page-hero {
+  padding-bottom: 28px;
+  border-bottom: 0.5px solid var(--line);
+  margin-bottom: 12px;
+}
+
+.page-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--orange);
+  letter-spacing: 0.18em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(56px, 11vw, 110px);
+  line-height: 0.9;
+  color: var(--orange);
+  letter-spacing: -0.005em;
+  margin: 0 0 18px;
+}
+
+.page-lede {
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 620px;
+  margin-bottom: 20px;
+}
+
+/* chip legend */
+.legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 14px 0 0;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+}
+
+/* section */
+.section {
+  padding: 44px 0 8px;
+}
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 4.5vw, 48px);
+  line-height: 1;
+  color: var(--fg);
+  letter-spacing: 0.005em;
+  margin: 0 0 24px;
+}
+
+/* study card */
+.card {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 22px;
+  padding: 20px 0;
+  border-top: 0.5px solid var(--line);
+  align-items: start;
+}
+.section .card:last-of-type { border-bottom: 0.5px solid var(--line); }
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 5px 8px;
+  border-radius: 3px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.2;
+  align-self: start;
+}
+.chip.robust {
+  background: var(--orange);
+  color: var(--bg);
+  border: 0.5px solid var(--orange);
+}
+.chip.limited {
+  background: transparent;
+  color: var(--muted);
+  border: 0.5px solid var(--dim);
+}
+.chip.speculation {
+  background: transparent;
+  color: var(--dim);
+  border: 0.5px dashed var(--dim);
+}
+.chip.none {
+  background: transparent;
+  color: var(--dim);
+  border: 0.5px solid transparent;
+  font-style: italic;
+}
+
+.card-body p.claim {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #E5E5E5;
+  margin: 0 0 10px;
+}
+.card-body p.source {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--dim);
+  margin: 0;
+  line-height: 1.6;
+}
+.card-body p.source a {
+  color: var(--orange);
+  text-decoration: none;
+}
+.card-body p.source a:hover { text-decoration: underline; }
+
+/* reading list */
+.readinglist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.readinglist li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 22px;
+  padding: 20px 0;
+  border-top: 0.5px solid var(--line);
+  align-items: start;
+}
+.readinglist li:last-child { border-bottom: 0.5px solid var(--line); }
+.readinglist .num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--orange);
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+.readinglist .title {
+  margin: 0 0 6px;
+  font-size: 15px;
+  color: var(--fg);
+  line-height: 1.4;
+}
+.readinglist .title em {
+  font-style: italic;
+  color: var(--fg);
+}
+.readinglist .source-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--orange);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.readinglist .source-link:hover { text-decoration: underline; }
+
+/* mobile: stack chip above claim */
+@media (max-width: 640px) {
+  .card { grid-template-columns: 1fr; gap: 10px; }
+  .readinglist li { grid-template-columns: 1fr; gap: 8px; }
+  .readinglist .num { padding-top: 0; }
+}
