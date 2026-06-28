@@ -1,0 +1,201 @@
+:root {
+  --bg: #0A0A0A;
+  --fg: #FFFFFF;
+  --orange: #F25E1E;
+  --muted: #C9C9C9;
+  --dim: #6E6E6E;
+  --line: #2A2A2A;
+  --font-display: 'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; }
+
+/* ---------- nav ---------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px clamp(20px, 4vw, 36px);
+  border-bottom: 0.5px solid var(--line);
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--fg);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.brand .mm {
+  background-image: repeating-linear-gradient(0deg, var(--orange) 0 3px, var(--fg) 3px 4px);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 500;
+}
+
+.nav-cta {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--orange);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 6px 2px;
+  border-bottom: 0.5px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.nav-cta:hover { border-bottom-color: var(--orange); }
+
+/* ---------- hero ---------- */
+.hero {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 48px);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--orange);
+  letter-spacing: 0.18em;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.88;
+  margin: 0;
+}
+
+.t-i {
+  display: block;
+  font-size: clamp(40px, 8vw, 72px);
+  color: var(--fg);
+  letter-spacing: 0.005em;
+}
+
+.t-married {
+  display: block;
+  font-size: clamp(58px, 13vw, 124px);
+  color: var(--orange);
+  margin-top: 4px;
+  letter-spacing: -0.005em;
+}
+
+.t-murderer {
+  display: block;
+  font-size: clamp(58px, 13vw, 124px);
+  letter-spacing: -0.005em;
+  background-image: repeating-linear-gradient(
+    0deg,
+    var(--orange) 0 12px,
+    var(--fg) 12px 18px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.tag {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 5vw, 46px);
+  color: var(--fg);
+  margin: 18px 0 32px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+.lede {
+  font-size: clamp(15px, 1.5vw, 17px);
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.ctas {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 24px;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.cta:hover { transform: translateY(-1px); background: #FF6F32; }
+.cta:active { transform: translateY(0); }
+
+.byline {
+  margin-top: 36px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+}
+
+/* ---------- footer ---------- */
+.footer {
+  padding: 24px clamp(20px, 4vw, 36px);
+  border-top: 0.5px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: 0.04em;
+}
+
+.footer a { color: var(--orange); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* ---------- mobile stripe scaling ---------- */
+@media (max-width: 600px) {
+  .t-murderer {
+    background-image: repeating-linear-gradient(
+      0deg,
+      var(--orange) 0 7px,
+      var(--fg) 7px 11px
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta { transition: none; }
+}
