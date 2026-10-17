@@ -6,3 +6,7 @@ Thumbs.db
 node_modules/
 .env
 .env.local
+
+# Private working notes stay out of the public repo
+content/
+*.zip
